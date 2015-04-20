@@ -6,6 +6,6 @@ Basic example that uses ReactJs, Reflux and Google Maps API
 - The top level component populates the props properties of all its children, and the map is updated
 
 To Run:
--npm install
--webpack
--python app.py
+- npm install
+- webpack
+- python app.py
