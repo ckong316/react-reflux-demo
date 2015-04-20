@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "webpack.config.js",
   "dependencies": {
-    "react": "^0.13.1",
     "jsx-loader": "^0.13.1",
+    "react": "^0.13.1",
+    "reflux": "^0.2.7",
     "webpack": "^1.8.5",
     "webpack-dev-server": "^1.8.0"
   },
