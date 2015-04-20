@@ -1,7 +1,7 @@
 var React = require('react');
 var Reflux = require('reflux');
 
-
+//Default data - mocks an external API call
 var allCoordinates = {
 	"First": [
 		{ "lat": -34.397, "lng": 150.644},

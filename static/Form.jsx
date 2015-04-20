@@ -1,7 +1,7 @@
 var React = require("react")
 var actions = require('./store.jsx').actions
 
-
+//Component that generates the select dropdown
 var DropdownMenu = React.createClass({
 	getInitialState: function() {
 		return {
