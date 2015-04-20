@@ -5,7 +5,7 @@ var actions = require('./store.jsx').actions
 var DropdownMenu = React.createClass({
 	getInitialState: function() {
 		return {
-			selectValue: 'None'
+			selectValue: "Default"
 		}
 	},
 
@@ -22,7 +22,7 @@ var DropdownMenu = React.createClass({
 		return (
 			<div className="filter-options">
 				<select value={this.state.selectValue} onChange={this.updateValue}>
-					<option value="None">None</option>
+					<option value="Default">None</option>
 				    <option value="First">First</option>
 				    <option value="Second">Second</option>
 				    <option value="Third">Third</option>
