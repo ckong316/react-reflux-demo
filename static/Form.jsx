@@ -20,8 +20,8 @@ var DropdownMenu = React.createClass({
 	render: function() {
 
 		return (
-			<div className="filter-options">
-				<select value={this.state.selectValue} onChange={this.updateValue}>
+			<div>
+				<select className="filter-options" value={this.state.selectValue} onChange={this.updateValue}>
 					<option value="Default">None</option>
 				    <option value="First">First</option>
 				    <option value="Second">Second</option>

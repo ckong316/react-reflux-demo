@@ -1,4 +1,14 @@
+#content {
+	width: 700px;
+}
+
 .map-canvas {
 	height: 500px;
 	width: 500px;
+	float: left;
+}
+
+.filter-options {
+	margin-left: 50px;
+	margin-top: 30px;
 }
