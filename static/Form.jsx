@@ -22,7 +22,7 @@ var DropdownMenu = React.createClass({
 		return (
 			<div className="filter-options">
 				<select value={this.state.selectValue} onChange={this.updateValue}>
-					<option value="None"/>None</option>
+					<option value="None">None</option>
 				    <option value="First">First</option>
 				    <option value="Second">Second</option>
 				    <option value="Third">Third</option>
