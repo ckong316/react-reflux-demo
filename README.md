@@ -9,7 +9,6 @@ To Run:
 ```
 $ pip install flask
 $ npm install
-$ webpack
+$ webpack           # if this doesn't work, try to install globally (`npm install webpack -g`)
 $ python app.py
 ```
-* if webpack doesn't work, try to install globally (`npm install webpack -g`)
