@@ -1,5 +1,5 @@
-var React = require("react")
-var actions = require('./store.jsx').actions
+var React = require("react");
+var {actions} = require('./store.jsx');
 
 //Component that generates the select dropdown
 var DropdownMenu = React.createClass({
@@ -33,7 +33,7 @@ var DropdownMenu = React.createClass({
 
 
 });
- 
+
 
 
 
