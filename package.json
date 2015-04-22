@@ -14,13 +14,16 @@
     "jest-cli": "^0.4.0"
   },
   "scripts": {
-    "test-jest": "jest"
+    "test-jest": "jest",
+    "test-jest-debug": "node-debug --nodejs --harmony ./node_modules/jest-cli/bin/jest.js --runInBand"
+
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react"
-    ]
+    ],
+    "moduleFileExtensions": [ "js", "json", "jsx" ]
   },
   "author": "",
   "license": "ISC"

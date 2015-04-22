@@ -1,5 +1,6 @@
 var React = require("react");
-var actions = require('./store.jsx').actions;
+var {actions} = require('./store.jsx');
+
 
 //Component that generates the select dropdown
 var DropdownMenu = React.createClass({
@@ -10,16 +11,15 @@ var DropdownMenu = React.createClass({
 	},
 
 	updateValue: function(event) {
-		console.log('updateValue')
 		var newSelectValue = event.target.value;
 		this.setState({
 			selectValue: newSelectValue
 		});
+
 		actions.filterMarkers(newSelectValue);
 	},
 
 	render: function() {
-
 		return (
 			<div>
 				<select className="filter-options" value={this.state.selectValue} onChange={this.updateValue}>
@@ -31,8 +31,6 @@ var DropdownMenu = React.createClass({
 			</div>
 		)
 	},
-
-
 });
 
 module.exports = DropdownMenu
