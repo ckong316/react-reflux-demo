@@ -25,21 +25,18 @@ var Map = React.createClass({
 		})
 	},
 
-	drawMarkers: function(coordinates) {
-		var markers = []
-		coordinates.forEach(function(coordinate) {
-			var marker = new google.maps.Marker({
+	generateMarkers: function(coordinates) {
+		return coordinates.map(function(coordinate) {
+			return new google.maps.Marker({
 				position: new google.maps.LatLng(coordinate.lat, coordinate.lng),
 				map: this.state.map
 			});
-			markers.push(marker);
 		}, this);
-		return markers;
 	},
 
 	componentWillReceiveProps: function(nextProps) {
 		this.deleteMarkers();
-		var markers = this.drawMarkers(nextProps.coordinates);
+		var markers = this.generateMarkers(nextProps.coordinates);
 		this.setState({
 			markers: markers
 		});
@@ -63,5 +60,5 @@ var Map = React.createClass({
 	},
 
 });
- 
+
 module.exports = Map
