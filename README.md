@@ -16,6 +16,8 @@ $ python app.py
 ```
 
 ## To Test:
+
+### Jest:
 ```
-$ npm test
+$ npm run test-jest
 ```

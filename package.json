@@ -10,10 +10,17 @@
     "webpack-dev-server": "^1.8.0"
   },
   "devDependencies": {
+    "babel-jest": "^5.0.1",
     "jest-cli": "^0.4.0"
   },
   "scripts": {
-    "test": "jest"
+    "test-jest": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
   },
   "author": "",
   "license": "ISC"
