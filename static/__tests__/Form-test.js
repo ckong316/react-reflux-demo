@@ -31,26 +31,51 @@ describe('Form', function() {
     expect(selectEl.children.length).toEqual(4);
   });
 
-  /*
-    // THIS TEST IS FAILING IN JEST BC OF INTERACTION BETWEEN REFLUX AND JEST MOCKING
-    // https://github.com/spoike/refluxjs/issues/292
-    // https://github.com/facebook/jest/issues/306#issuecomment-81463843
 
-
+  // Test which depend on store
   it('changes value when selected', function() {
     var testForm = TestUtils.renderIntoDocument(<Form />);
     var selectEl = TestUtils.findRenderedDOMComponentWithTag(testForm, 'select').getDOMNode();
     var lastSelectOption = selectEl.children[3];
 
-    // trigger change event on select el
-    TestUtils.Simulate.change(selectEl, {eventData: {value: lastSelectOption.value}});
+    // NOTE: Mock should be created before interaction,
+    // so that interactions with mock can be recorded.
+    // This creates a reference to the mocked store and
+    // expects it to be clean
+    var {actions} = require('../store.jsx');
+
+    expect(actions.filterMarkers).not.toBeCalled();
+
+    // Trigger change event on select el and check that call to store was made
+    TestUtils.Simulate.change(selectEl, {target: {value: lastSelectOption.value}});
 
     // TODO would prefer this; is it possible?
     // open select el and click an option
     // TestUtils.Simulate.click(selectEl);
     // TestUtils.Simulate.click(lastSelectOption, {eventData: {value: lastSelectOption.value}});
 
+    // WARNING:
+    // This test is actually not a good thing, since the state should just come from the store
+    // and not set state itself.
     expect(selectEl.value).toEqual('Third');
+
+    // BETTER:
+    // Check that the anticipated action is called with a resonable arg
+    expect(actions.filterMarkers).toBeCalledWith('Third');
   });
-  */
+
+
+  // Ensure mocking is not being conflated between tests
+  it('changes value when selected', function() {
+    var {actions} = require('../store.jsx');
+
+    var testForm = TestUtils.renderIntoDocument(<Form />);
+    var selectEl = TestUtils.findRenderedDOMComponentWithTag(testForm, 'select').getDOMNode();
+    var lastSelectOption = selectEl.children[3];
+
+    expect(actions.filterMarkers).not.toBeCalled();
+    TestUtils.Simulate.change(selectEl, {target: {value: lastSelectOption.value}});
+    expect(actions.filterMarkers).toBeCalledWith('Third');
+  });
+
 });

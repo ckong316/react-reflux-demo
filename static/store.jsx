@@ -40,5 +40,7 @@ var store = Reflux.createStore({
 	}
 })
 
-module.exports.store = store;
-module.exports.actions = actions;
+module.exports = {
+	store: store,
+	actions: actions,
+}

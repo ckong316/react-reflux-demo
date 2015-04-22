@@ -20,4 +20,5 @@ $ python app.py
 ### Jest:
 ```
 $ npm run test-jest
+$ npm run test-jest-debug   # requires 'node inspect' npm module to be installed globally
 ```
